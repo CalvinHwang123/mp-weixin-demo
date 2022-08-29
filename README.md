@@ -14,7 +14,7 @@
 
 #### 1、公众号分类
 
-![mpcategory](screenshot\mpcategory.png)
+![mpcategory](screenshot/mpcategory.png)
 
 
 
