@@ -20,13 +20,13 @@
 
 #### 2、公众号管理
 
-![mpinfo](screenshot\mpinfo.png)
+![mpinfo](screenshot/mpinfo.png)
 
 
 
 #### 3、文章分类
 
-![articlecategory](screenshot\articlecategory.png)
+![articlecategory](screenshot/articlecategory.png)
 
 
 
@@ -34,21 +34,21 @@
 
 ##### 4.1 文章列表，点击原始链接可查看文章
 
-![mparticle](screenshot\mparticle.png)
+![mparticle](screenshot/mparticle.png)
 
 
 
 ##### 4.2 文章采集
 
-![articlecollection](screenshot\articlecollection.png)
+![articlecollection](screenshot/articlecollection.png)
 
 
 
 ##### 4.3 关键词搜索，目前实现按公众号标题搜索
 
-![keyword](screenshot\keyword.png)
+![keyword](screenshot/keyword.png)
 
-![mpresult](screenshot\mpresult.png)
+![mpresult](screenshot/mpresult.png)
 
 
 
