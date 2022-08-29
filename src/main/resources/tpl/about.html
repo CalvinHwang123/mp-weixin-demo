@@ -1,0 +1,36 @@
+<html>
+<head>
+    <base href="${base}/">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ant-design/antd.min.css">
+</head>
+<body>
+<div id="app">
+    <template>
+        <div style="padding: 24px">
+            <a-timeline>
+                <a-timeline-item><code>2022-08-22</code> V1.1 新增关键词搜索功能。</a-timeline-item>
+                <a-timeline-item><code>2022-08-18</code> V1.0 版本发布。1、支持公众号校验，公众号内文章采集所有，按时间区间采集等。</a-timeline-item>
+            </a-timeline>
+            <p>
+                作者微信：huangluqian12345（加好友备注：公众号采集）
+            </p>
+        </div>
+    </template>
+</div>
+<script src="ant-design/vue.min.js"></script>
+<script src="ant-design/moment.min.js"></script>
+<script src="ant-design/antd.min.js"></script>
+<script src="ant-design/axios.min.js"></script>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: "Hello Ant-Design",
+            };
+        },
+    });
+</script>
+</body>
+</html>

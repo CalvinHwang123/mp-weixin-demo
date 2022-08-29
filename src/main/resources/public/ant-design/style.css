@@ -1,0 +1,87 @@
+/* 面板 */
+.my-antd-container {
+    background: #f5f7fa;
+    height: auto;
+    min-height: 100%;
+}
+
+/*标题 start*/
+.titleDiv {
+}
+/*标题 end*/
+
+/* 树 start */
+.my-antd-tree-card {
+    padding: 8px;
+    height: 86%;
+    overflow: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+.ant-card-body {
+    padding: 0;
+}
+
+.ant-tree li .ant-tree-node-content-wrapper {
+    width: 90%;
+}
+/* 树 end */
+
+/* 表格 start */
+.ant-pagination-item-link i {
+    padding-top: 5px;
+}
+
+.ant-table-content th {
+    font-weight: normal;
+}
+
+.my-antd-divider {
+}
+
+.ant-table-pagination.ant-pagination {
+    float: none;
+    text-align: center;
+}
+
+.ant-table-row, .ant-table-thead {
+    font-size: 14px;
+    background: white;
+}
+
+.ant-advanced-search-form {
+    background: #fbfbfb;
+    /*border: 1px solid #d9d9d9;
+    padding: 24px;
+    border-radius: 6px;*/
+}
+
+.ant-advanced-search-form .ant-form-item {
+    display: flex;
+    margin-bottom: 0;
+}
+
+.ant-advanced-search-form .ant-form-item-control-wrapper {
+    flex: 1;
+}
+
+#components-form-demo-advanced-search .ant-form {
+    max-width: none;
+}
+
+#components-form-demo-advanced-search .search-result-list {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    /*border-radius: 6px;*/
+    background-color: #fafafa;
+    min-height: 200px;
+    text-align: center;
+    padding-top: 80px;
+}
+/* 表格 end */
+
+/*模态框 start*/
+.ant-modal-close-x {
+    padding-top: 20px;
+}
+/*模态框 end*/

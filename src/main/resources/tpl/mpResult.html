@@ -1,0 +1,114 @@
+<html>
+<head>
+    <base href="${base}/">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ant-design/antd.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="ant-design/style.css">
+    <style>
+        .ant-pagination-item-link {
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <template>
+        <div style="padding: 20px;">
+            <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="listData">
+                <div slot="footer">找到约<strong>{{ pagination.total }}</strong>条结果</div>
+                <a-list-item slot="renderItem" key="item.title" slot-scope="item, index">
+                    <template v-for="{ type, text } in actions" slot="actions">
+                        <span :key="type">
+                          <a-icon :type="type" style="margin-right: 8px"/>
+                          {{ text }}
+                        </span>
+                    </template>
+                    <!--<a
+                            href="javascript:void(0)"
+                            slot="extra"
+                            @click="doCopyUrl(item.qrcode)"
+                    >关注二维码</a>-->
+                    <a-list-item-meta :description="item.alias">
+                        <a slot="title" target="_blank" :href="'https://weixin.sogou.com/' + item.href">{{ item.name
+                            }}</a>
+                        <a-avatar style="width: 58px; height: 58px;" slot="avatar" src="wechat.png"/>
+                    </a-list-item-meta>
+                    <div v-if="item.desc0">{{ item.desc0 }}</div>
+                    <div v-if="item.desc1">{{ item.desc1 }}</div>
+                    <div v-if="item.desc2">{{ item.desc2 }}</div>
+                </a-list-item>
+            </a-list>
+            <a-back-top />
+        </div>
+    </template>
+</div>
+<script src="ant-design/vue.min.js"></script>
+<script src="ant-design/moment.min.js"></script>
+<script src="ant-design/antd.min.js"></script>
+<script src="ant-design/axios.min.js"></script>
+<script src="ant-design/antd-with-locales.min.js"></script>
+<script src="ant-design/common.js"></script>
+<script>
+    //如果使用tpl模块则需要通过如下js脚本获取，注意只有登录成功才能获取到token
+    const token = parent.getAppToken().token;
+
+    var vue = new Vue({
+        el: '#app',
+        data() {
+            return {
+                listData: [],
+                pagination: {
+                    onChange: page => {
+                        console.log(page);
+                        this.pageNo = page;
+                        this.getData();
+                    },
+                    pageSize: 10,
+                    total: 0
+                },
+                pageNo: 1,
+                actions: [
+                    /*{type: 'star-o', text: '156'},
+                    {type: 'like-o', text: '156'},
+                    {type: 'message', text: '2'},*/
+                ],
+            };
+        },
+        created() {
+        },
+        mounted() {
+            this.getData();
+        },
+        methods: {
+            getData() {
+                axios({
+                    url: '/erupt-api/sogou/searchBizSogou?keyword=' + getQueryString('keyword') + '&pageNo=' + this.pageNo,
+                    headers: {
+                        token
+                    },
+                    params: {}
+                })
+                    .then(response => {
+                        console.log(response);
+                        this.listData = response.data.list;
+                        this.pagination.total = response.data.total;
+                        this.renderPaginationStyle();
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        this.$message.error('接口异常，请稍后再试');
+                    });
+            },
+            doCopyUrl(qrcode) {
+                // window.clipboardData.setData('Text', qrcode);
+                // this.$message.info('关注二维码链接已复制到剪贴板');
+            },
+            renderPaginationStyle() {
+                // document.getElementsByClassName('ant-pagination-item-ellipsis').innerHTML = '•••';
+            }
+        }
+    });
+</script>
+</body>
+</html>
