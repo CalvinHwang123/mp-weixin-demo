@@ -48,7 +48,7 @@
 
 ![keyword](screenshot/keyword.png)
 
-![mpresult](screenshot/mpresult.png)
+![mpresult](screenshot/mpResult.png)
 
 
 
